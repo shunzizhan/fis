@@ -1,5 +1,5 @@
 fis.match('*', {
-  useHash: false
+  useHash: true
 });
 
 fis.match('::packager', {
@@ -15,6 +15,6 @@ fis.match('*.less', {
   rExt: '.css'
 })
 
-// fis.match('*.{css,less}', {
-//   packTo: '/static/aio.css'
-// });
+fis.match('/js/{a.js,b.js,c.js}', {
+  packTo: '/js/contact_all.js'
+});
