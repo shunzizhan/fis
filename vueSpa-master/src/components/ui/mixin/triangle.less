@@ -1,0 +1,48 @@
+@import "dib";
+
+/**
+ * 三角形
+ * @param  {string} @size      大小，默认4px
+ * @param  {string} @color     颜色，默认#333 
+ * @param  {string} @direction 方向，默认top
+ */
+
+.triangle(@size:4px, @color:#333, @direction:top)when(@direction=top) {
+    .dib;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border-width: @size;
+    border-color: @color transparent transparent;
+    border-style: solid;
+}
+
+.triangle(@size:4px, @color:#333, @direction:top)when(@direction=right) {
+    .dib;
+    width:0;
+    height:0;
+    font-size:0;
+    border-width:@size;
+    border-color:transparent @color transparent transparent;
+    border-style:solid;
+}
+
+.triangle(@size:4px, @color:#333, @direction:top)when(@direction=bottom) {
+    .dib;
+    width:0;
+    height:0;
+    font-size:0;
+    border-width:@size;
+    border-color:transparent transparent @color;
+    border-style:solid;
+}
+
+.triangle(@size:4px, @color:#333, @direction:top)when(@direction=left) {
+    .dib;
+    width:0;
+    height:0;
+    font-size:0;
+    border-width: @size;
+    border-color: transparent transparent transparent @color ;
+    border-style: solid;
+}

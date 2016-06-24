@@ -1,0 +1,25 @@
+/**
+ * 占位符 颜色设置\
+ * @param  {string} @color      颜色
+ */
+.placeholder(@color){
+	&::-webkit-input-placeholder{
+		color:@color;
+	}
+
+	&::-moz-placeholder{
+		color:@color;
+	}
+
+	&::-o-input-placeholder{
+		color:@color;
+	}
+	
+	&:-ms-input-placeholder{
+		color:@color;
+	}
+
+	&::input-placeholder{
+		color:@color;
+	}
+}

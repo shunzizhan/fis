@@ -1,0 +1,228 @@
+@import "/components/ui/normalize";
+@import "/components/ui/variable";
+@import "/components/ui/mixin";
+
+.body{
+    font-family: @font-family;
+    font-size: 15px;
+}
+.header{
+    padding: 25px 60px;
+    position: relative;
+    border-bottom: 1px solid @color-border;
+    box-shadow:0px 0px 5px @color-border;
+    #logo{
+        display: inline-block;
+        line-height: 40px;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        img{
+            vertical-align: middle;
+            width: 40px;
+            height: 40px;
+        }
+        span{
+            margin-left: 5px;
+        }
+        &:visited{
+            color: @font-color;
+        }
+    }
+
+    #nav{
+        list-style-type: none;
+        color: @font-color;
+        height: 40px;
+        line-height: 40px;
+        position: absolute;
+        top: 25px;
+        right: 60px;
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+        li{
+            float: left;
+            margin: 0px 15px;
+            font-weight: 500;
+            cursor: pointer;
+            &.active{
+                border-bottom: 3px solid @color-border;
+            }
+            a{
+                text-decoration: none;
+                color: @font-color;
+            }
+        }
+        
+    }
+}
+
+#main{
+    position: relative;
+    z-index: 1;
+    padding: 0 60px 30px;
+    // overflow-x: hidden;
+
+    .sidebar{
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 60px;
+        padding: 30px 0;
+        width: 250px;
+        margin-right: 20px;
+
+
+        .list{
+            font-size: 14px;
+            padding-right: 10px;
+            border-right: 1px solid #eee;
+            .donated{
+                font-size: 16px;
+                color: #666;
+                width: 100%;
+                display: inline-block;
+                cursor: default;
+                padding-bottom: 6px;
+                border-bottom: 1px solid #eee;
+                text-decoration: none;
+                cursor: pointer;
+                &:visited{
+                    color:#666; 
+                }
+                img{
+                    width: 16px;
+                    height: 16px;
+                    vertical-align: baseline;
+                }
+            }
+
+            .listInfo{
+                h4{
+                    color: @font-color;
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin-bottom: 10px; 
+                    border-bottom: 1px solid #eee; 
+                    padding-bottom: 6px;  
+                }
+                .classify{
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+                    display: inline-block;
+                    li{
+                        float: left;
+                        margin-bottom: 12px;
+                        cursor: pointer;
+                        padding: 6px 9px;
+                        color: #058BFA;
+                        margin-left: 2px;
+                        a{
+                            text-decoration: none; 
+                        }
+
+                        &.active{
+                                color: #fff;
+                                background: @color-border;    
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    .showinfo{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        .maininfo{
+            margin-left: 270px;
+            .infotitle{
+                margin-top: 0px;
+                padding-bottom: 5px;
+                font-size: 16px;
+                font-weight: 500;
+                border-bottom: 1px solid #eee;
+                span{
+                    color: #058BFA;
+                }
+            }
+            .info{
+                margin-bottom: 15px;
+                font-size: 13px;
+                color: #35495E;
+                .percent{
+                    display: inline-block;
+                    background: #6fb92c;
+                    color: #fff;
+                    box-sizing: border-box;
+                    padding: 3px;
+                    width: 100%;
+                    border-radius: 4px 4px;
+                    text-align: center;
+                }
+                .showcodeinfo{
+                    .span{
+                        font-size: 14px;
+                        display: inline-block;
+                        padding: 8px 10px;
+                        border: 1px solid #ADADAD;
+                        cursor: pointer;
+                        &.active{
+                            background: #eee;
+                            box-shadow: inset 0px 3px 5px #d4d4d4;
+                        }
+                        &:hover{
+                           background: #eee; 
+                        }
+                    }
+                    .htmlcode{
+                        border-radius: 4px 0px 0px 4px;
+                    }
+                    .jscode{
+                        border-radius: 0px 4px 4px 0px;
+                    }
+                    .showcodemain{
+                        box-sizing: border-box;
+                        margin-top: 20px;
+                        border-radius: 5px 5px;
+                        padding: 5px;
+                        background: #F5F5F5;
+                        width: 100%;
+                        min-height: 100px;
+                    }
+                }
+            }
+            .use{
+                width: 50%;
+                float: left;
+                padding: 25px 10px;
+                box-sizing: border-box;
+            }
+
+            .showcode{
+                width: 50%;
+                float: right;
+                padding: 25px 10px;
+                box-sizing: border-box;
+            }    
+        }
+        
+    }
+}
+
+
+.footer{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+    position: absolute;
+    bottom: -10px;
+}

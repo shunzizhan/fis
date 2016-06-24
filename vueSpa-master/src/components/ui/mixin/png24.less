@@ -1,0 +1,8 @@
+/**
+ * 解决IE6下png24半透明 图片地址需要绝对路径
+ * @param  {string} @url 
+ */
+.png24(@url){
+	_background-image:none;
+	_filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{url}', sizingMethod='scale')";
+}
