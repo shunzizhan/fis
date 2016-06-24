@@ -1,0 +1,74 @@
+.button-variant(@name, @color, @background, @border, @color-reverse) {
+    .btn_@{name}{ 
+        color: @color;
+        background-color: @background;
+        border-color: @border;
+        a&:visited {
+            color: @color; 
+        }
+        &:hover,
+        &:focus,
+        &:active,
+        &.z-active {
+            color: @color;
+            border-color: darken(@border, 12%);
+        }
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+            &,
+            &:hover,
+            &:focus,
+            &:active,
+            &.z-active {
+                background-color: @background;
+                border-color: @border;
+            }
+        }
+        &:hover,
+        &:focus {
+            background-color: darken(@background, 7%);
+        }
+        &:active,
+        &.z-active {
+            background-image: none;
+            background-color: darken(@background, 5%);
+        }
+    }
+    .btn_@{name}-reverse {
+        color: @color-reverse;
+        background-color: @color-white;
+        border-color: @border;
+        // a&:visited {
+        //     color: @border;
+        // }
+        &:hover,
+        &:focus,
+        &:active,
+        &.z-active {
+            color: @color-reverse;
+            border-color: darken(@border, 12%);
+        }
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+            &,
+            &:hover,
+            &:focus,
+            &:active,
+            &.z-active {
+                background-color: @color-white;
+                border-color: @border;
+            }
+        }
+        &:hover,
+        &:focus {
+            color: darken(@color-reverse, 12%);
+        }
+        &:active,
+        &.z-active {
+            background-image: none;
+            color: darken(@color-reverse, 7%);
+        }
+    }
+}

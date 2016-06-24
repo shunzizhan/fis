@@ -1,0 +1,10 @@
+/**
+ * 半透明
+ * @param  {number} @num     透明度。取值区间0-1，默认值：0.5
+ */
+
+.opacity(@num: 0.5) {
+    @ieNum: @num * 100;
+    opacity: @num;
+    filter: alpha(opacity=@ieNum );
+}

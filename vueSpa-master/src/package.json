@@ -1,0 +1,12 @@
+{
+  "name": "rjy_pc_web",
+  "version": "2.3.0",
+  "description": "project build",
+  "author": "rjy",
+  "private": true,
+  "devDependencies": {
+    "fis3-parser-less":"",
+    "fis3-postpackager-loader":"",
+    "fis3-optimizer-html-minifier":""
+  }
+}

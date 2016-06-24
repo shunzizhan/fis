@@ -1,0 +1,53 @@
+@import "/components/ui/variable";
+
+.header{
+    padding: 25px 60px;
+    position: relative;
+    border-bottom: 1px solid @color-border;
+    box-shadow:0px 0px 5px @color-border;
+    #logo{
+        display: inline-block;
+        line-height: 40px;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        img{
+            vertical-align: middle;
+            width: 40px;
+            height: 40px;
+        }
+        span{
+            margin-left: 5px;
+        }
+        &:visited{
+            color: @font-color;
+        }
+    }
+
+    #nav{
+        list-style-type: none;
+        color: @font-color;
+        height: 40px;
+        line-height: 40px;
+        position: absolute;
+        top: 25px;
+        right: 60px;
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+        li{
+            float: left;
+            margin: 0px 15px;
+            font-weight: 500;
+            cursor: pointer;
+            &.active{
+                border-bottom: 3px solid @color-border;
+            }
+            a{
+                text-decoration: none;
+                color: @font-color;
+            }
+        }
+        
+    }
+}

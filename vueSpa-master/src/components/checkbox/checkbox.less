@@ -1,0 +1,32 @@
+@import "/components/ui/variable";
+@import "/components/ui/mixin";
+.u-checkbox {
+    i {
+        .px2px(width, 28);
+        .px2px(height, 28);
+        display: inline-block;
+        border: 1px solid @color-strong;
+        border-radius: 2px;
+        vertical-align: middle;
+    }
+    input {
+        visibility: hidden;
+        position: absolute;
+    }
+    &.z-checked {
+        i {
+            background-color: @color-strong;
+            &:after {
+                content: "";
+                display: block;
+                width: 9px;
+                height: 6px;
+                .rotate(-45deg);
+                border-left: 2px solid @color-white;
+                border-bottom: 2px solid @color-white;
+                margin-top: 2px;
+                margin-left: 2px;
+            }
+        }
+    }
+}

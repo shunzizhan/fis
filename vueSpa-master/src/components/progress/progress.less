@@ -1,0 +1,108 @@
+/**
+ * 默认按钮
+ */
+
+@import "../ui/variable";
+@import "../ui/mixin";
+
+//base progress
+
+.progress{
+    display: inline-block;
+    background: #6fb92c;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 3px;
+    width: 100%;
+    border-radius: 8px 8px;
+    text-align: center;    
+}
+
+    
+
+// base
+.btn {
+    display: inline-block;
+    padding: 0 1em;
+    .px2px(line-height, 72);
+    text-align: center;
+    vertical-align: middle;
+    .px2px(font-size, @font-size-h2);
+    color: @color-white;
+    border: 1px solid @color-primary;
+    .px2px(border-radius, @radius-large);
+    background-color: @color-primary;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    .user-select(none);
+    .text-overflow();
+}
+
+// 色调
+
+.btn_gray {
+    color: @color-gray5;
+    background-color: transparent;
+    border-color: lighten(@color-gray5, 20%);
+}
+
+.btn_gray2 {
+    color: @color-gray7;
+    background-color: @color-gray4;
+    border-color: @color-gray4;
+}
+
+.btn_orange {
+    background-color: @color-success;
+    border-color: @color-success;
+}
+.btn_white {
+    color: @color-gray7;
+    background-color: @color-white;
+    border-color: @color-white;
+}
+
+.btn.z-disabled,
+button[disabled] {
+    background-color: lighten(@color-gray5, 20%);
+    border-color: lighten(@color-gray5, 20%);
+}
+/* 镂空底 */
+.btn_orange2 {
+    color: @color-success;
+    background-color: @color-white;
+    border-color: @color-success;
+}
+
+.btn_gray3 {
+    color: @color-gray7;
+    background-color: transparent;
+    border-color: @color-gray5;
+}
+
+
+// 大小
+.btn_small {
+    .px2px(line-height, 56);
+    .px2px(font-size, @font-size-h3);
+    .px2px(border-radius, @radius-small);
+}
+
+.btn_big {
+    .px2px(line-height, 84);
+    .px2px(font-size, @font-size-h1);
+}
+
+.btn_block {
+    display: block;
+    width: 100%;
+}
+
+.w160 {
+    .px2rem(width, 160);
+}
+.w300 {
+    .px2rem(width, 300);
+}

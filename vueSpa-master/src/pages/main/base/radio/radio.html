@@ -1,0 +1,91 @@
+<div class="showinfo">
+    <div class="maininfo">
+
+        <div class="use">
+            <h3 class="infotitle">Radio 选项</h3>
+            <div class="info">
+
+                <ui-checkbox>biger</ui-checkbox> &nbsp;&nbsp;
+
+                <ui-checkbox>small</ui-checkbox>
+                
+            </div>
+
+            <h3 class="infotitle">选项</h3>
+            <div class="info"> 
+                <span>展示效果:</span>
+                <ui-checkbox>biger</ui-checkbox>
+            </div>
+
+            <h3 class="infotitle">说明</h3>
+            <div class="info">
+                <ul>
+                    <li>可以自定义扩展的class</li>
+                    <li>使用方法2</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="showcode">
+            <h3 class="infotitle">作者 [Author]: <span>Lilian</span></h3>
+
+            <h3 class="infotitle">完成进度 [Percent]</h3>
+                <div class="info">
+                    <span class="percent">100%</span>
+                </div>    
+
+            <h3 class="infotitle">代码引用 [showCode]</h3>
+                
+                <div class="info">
+                    <div class="showcodeinfo">
+                       <span class="htmlcode span">HTML</span><span class="jscode span active">JS</span>
+                       <div class="showcodemain" style="">
+<pre><code class="xml">
+    &ltui-checkbox&gtbiger&lt/ui-checkbox&gt
+</code></pre>
+                       </div>
+
+                       <div class="showcodemain">
+
+<pre><code class="javascript">
+window.RUI.button = {
+    props: ['exclass', 'type', 'size', 'block', 'width'], //扩展的class 色调类型 尺寸
+    computed: {
+        className: function() {
+            var cn = '';
+            cn += this.size ? ' btn_' + this.size : '';
+            cn += this.type ? ' btn_' + this.type : '';
+            cn += this.block ? ' btn_block' : '';
+            cn += this.exclass ? " " + this.exclass : '';
+            return cn;
+        },
+        style: function() {
+            return this.width ? 'width:' + this.width : '';
+        }
+    },
+    template: __inline('button.tpl')
+};
+</code></pre>
+
+                       </div>
+
+                    </div>
+                </div>  
+        </div> 
+
+
+    </div>               
+</div>
+
+
+
+
+    
+
+
+
+
+
+    
+
+

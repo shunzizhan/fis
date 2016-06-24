@@ -1,0 +1,28 @@
+/**
+ * 滚动头条
+ */
+
+@import "../ui/variable";
+@import "../ui/mixin";
+
+.toplines-bd{
+    flex-grow: 1;
+    border-left:1px solid @color-gray4;
+    .px2rem(margin-left, 20);
+    .px2rem(padding-left, 20); 
+    overflow: hidden;
+    height: 0.75rem;
+}
+
+.m-toplines{
+    .px2rem(height, 48);
+    .px2rem(line-height, 48);
+}
+.m-toplines-item{
+    height: 31px;
+    display: block;
+    overflow: hidden;
+    .px2rem(line-height, 48);
+    .px2px(font-size, 24);
+    //height: 62px;
+}

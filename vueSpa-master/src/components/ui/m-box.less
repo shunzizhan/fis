@@ -1,0 +1,136 @@
+@import "variable";
+@import "mixin";
+   
+.m-box {
+	.px2rem(margin-bottom, @spacing-vertical-base);
+	border-bottom: 1px solid lighten(@color-gray5, 20%);
+	background-color: @color-white;
+	
+	.icon-shield {
+		.px2px(margin-right, 10);
+    	.px2px(font-size, 32);
+    	color: @color-primary;
+	}
+}
+// 单行文本标题
+.m-box__title {
+	.px2px(font-size, @font-size-h2);
+	color: @color-black;
+}
+// 间距
+.m-box__title,
+.m-box__text,
+.m-box__flex {
+	.px2rem(padding-top, 24);
+	.px2rem(padding-bottom, 24);
+	.px2rem(padding-right, 30);
+	.px2rem(margin-left, 30);
+	border-bottom: 1px solid @color-gray4;
+	&:last-child {
+		border-bottom: 0;
+	} 
+}
+//各种文字样式
+.m-box__text,
+.m-box__flex {
+	//黑色16px标题文本
+	.name {
+		.px2px(font-size, @font-size-h2);
+		color: @color-black;
+	}
+	// 13px
+	.detail-small {
+		.px2px(font-size, @font-size-h4);
+	}
+	// 最小，默认灰色
+	.tip {
+		.px2px(font-size, @font-size-h5);
+		color: @color-gray5;
+	}
+	// 橙色突出
+	.highlight {
+		color: @color-success;
+	}
+	// 蓝色突出
+	.highlight2 {
+		color: @color-strong;
+	}
+	// 绿色突出
+	.highlight3 {
+		color: @color-primary;
+	}
+	// 价格
+	.price {
+		.px2px(font-size, 40);
+	}
+	// 加大
+	.big {
+		.px2px(font-size, @font-size-h2);
+	}
+	// 加黑
+	.black {
+		color: @color-black;
+	}
+	// 灰色
+	.gray {
+		color: @color-gray5;
+	}
+}
+.m-box__text,
+.m-box__flex .item {
+	.name,
+	.detail,
+	.detail-small {
+		.px2rem(margin-bottom, 8);
+	}
+	p {
+		.px2rem(margin-top, 10);
+		.px2rem(margin-bottom, 10);
+	}
+}
+//box布局
+.m-box__flex {
+	.box();
+	.box-align(center);
+
+	.item {
+		.box-flex(1);
+		.icon-arr-right {
+			.px2rem(margin-left, 20);
+		}
+	}
+	.item2 {
+		.box-flex(1);
+		&:last-child {
+			text-align: right;
+		}
+	}
+	
+	img {
+		display: block;
+		.px2rem(margin-right, @spacing-vertical-small);
+	}
+	img.size1 {
+		.px2rem(width, 120);
+		.px2rem(height, 120);
+		.px2rem(border-radius, 60);
+	}
+	img.size2 {
+		.px2rem(width, 130);
+		.px2rem(height, 130);
+	}
+	img.size3 {
+		.px2rem(width, 120);
+		.px2rem(height, 120);
+	}
+
+
+	// 右边距
+	.icon-map,
+	.icon-call,
+	.icon-clock {
+	    .px2px(margin-right, @spacing-vertical-small);
+	    .px2px(font-size, @font-size-h3);
+	    color: @color-gray5;
+	}
+}

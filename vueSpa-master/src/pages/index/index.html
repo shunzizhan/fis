@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue - Spa(单页面应用) - 组件库</title>
+    <link rel="stylesheet" type="text/css" href="/utils/xcode.css">
+</head>
+<body>
+
+    <div id="wrap">
+        
+        <header class="header">
+            <a id="logo" href="/">
+                <img src="../components/default/vue-logo.png" />
+                <span>Run-Vue</span>
+            </a>      
+            
+            <ul id="nav">
+            <!-- z组件库 -->
+                <li v-link="{ path: '/' }" ><a>组件库</a></li>
+                <li v-link="{ path: '/api' }"><a>组合组件库</a></li>
+                <li v-link="{ path: '/space' }"><a>社区</a></li>
+                <li v-link="{ path: '/feedback' }"><a>反馈</a></li>
+            </ul>
+        </header>
+
+        <router-view></router-view>
+
+        <footer class="footer" id="footer">
+            <strong>♥</strong>  VueJS —— SZ Tip of the finger city UED
+        </footer>
+
+        
+    </div>
+
+<script type="text/javascript" src="/utils/highlight.pack.js"></script>
+<script type="text/javascript">
+    hljs.configure({tabReplace: '    '});
+    hljs.initHighlightingOnLoad();
+</script>
+    
+</body>
+</html>
