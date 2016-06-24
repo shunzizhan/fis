@@ -1,0 +1,22 @@
+{
+  "name": "fis-postprocessor-rjy-postcss",
+  "version": "0.1.1",
+  "description": "fis postcss",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ken1987/fis-postprocessor-rjy-postcss.git"
+  },
+  "keywords": [
+    "fis", "postcss", "rjy"
+  ],
+  "author": "ken",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ken1987/fis-postprocessor-rjy-postcss/issues"
+  },
+  "homepage": "https://github.com/ken1987/fis-postprocessor-rjy-postcss",
+  "dependencies": {
+    "postcss": "^5.0.0"
+  }
+}

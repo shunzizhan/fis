@@ -1,0 +1,26 @@
+/**
+ * 线性渐变
+ * 只支持水平和垂直方向，滤镜在IE6、IE7中须配合width或者height属性方可生效
+ * @param  {string} @startColor            起始颜色
+ * @param  {string} @endColor              结束颜色
+ * @param  {string} @layout 			   方向。默认:h 垂直方向
+ */
+
+.linearGradient(@startColor,@endColor,@layout:h)when(@layout=h){
+	background-color:@endColor;
+	background-image:-webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background-image:-webkit-linear-gradient(top,@startColor,@endColor);
+	background-image:-moz-linear-gradient(top,@startColor,@endColor);
+	background-image:-o-linear-gradient(top,@startColor,@endColor);
+	background-image:-ms-linear-gradient(top,@startColor,@endColor);
+	background-image:linear-gradient(top,@startColor,@endColor);
+}
+.linearGradient(@startColor,@endColor,@layout:h)when(@layout=v){
+	background-color:@endColor;
+	background-image:-webkit-gradient(linear, top left, top right, from(@startColor), to(@endColor));
+	background-image:-webkit-linear-gradient(left,@startColor,@endColor);
+	background-image:-moz-linear-gradient(left,@startColor,@endColor);
+	background-image:-o-linear-gradient(left,@startColor,@endColor);
+	background-image:-ms-linear-gradient(left,@startColor,@endColor);
+	background-image:linear-gradient(left,@startColor,@endColor);
+}

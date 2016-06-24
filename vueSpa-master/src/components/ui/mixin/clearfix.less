@@ -1,0 +1,14 @@
+/**
+ * 清楚浮动产生的影响样式
+ */
+.clearfix() {
+    &:before,
+    &:after {
+    content: " ";
+    display: table;
+    }
+
+    &:after {
+    clear: both;
+    }
+}

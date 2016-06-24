@@ -1,0 +1,132 @@
+/**
+ * 辅助类
+ */
+@import "variable"; 
+@import "mixin"; 
+
+/* 浮动 */
+.f-clearfix{
+	.clearfix();
+}
+.f-fl{
+	float:left;
+}
+.f-fr{
+	float:right;
+}
+
+/* 显示隐藏 */
+.f-hide {
+	display: none;
+}
+// box布局
+.f-box {
+	.box();
+	.box-align(center);
+}
+.f-bf1 {
+	-webkit-box-flex: 1;
+	-ms-box-flex: 1;
+	box-flex: 1;
+}
+
+/* 文本对齐 */
+.f-tar{
+	text-align: right;
+}
+.f-tal{
+	text-align: left;
+}
+.f-tac{
+	text-align: center;
+}
+
+.f-ti2 {
+	text-indent: 2em;
+}
+// 辅助边距值
+.f-ml10 {
+	margin-left: 10px;
+}
+.f-mr10 {
+	margin-right: 10px;
+}
+.f-mt10 {
+	margin-top: 10px;
+}
+.f-mb10 {
+	margin-bottom: 10px;
+}
+
+.f-c-primary {
+	color: @color-primary;
+}
+.f-c-success {
+	color: @color-success;
+}
+.f-c-strong {
+	color: @color-strong;
+}
+.f-c-weak {
+	color: @color-gray5;
+}
+
+// 固定在底部的按钮
+.m-b-con {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    .content {
+    	.px2rem(width, 640);
+	    min-width: 320px;
+	    margin: 0 auto;
+		.px2rem(padding, @spacing-vertical-small, @spacing-vertical-base);
+		text-align: center;
+		border-top: 1px solid @color-gray4;
+		background-color: rgba(255, 255, 255, 0.8);
+    }
+	
+}
+.m-b-div {
+	box-sizing: content-box;
+	.px2rem(padding, @spacing-vertical-small);
+	.px2px(height, 84);
+}
+// 条纹背景
+.m-streak {
+	min-height: 6px;
+	background: url('color_line.png') repeat-x;
+}
+// textarea
+.u-textarea {
+	width: 100%;
+	border: 0;
+	.px2rem(height, 360);
+	.px2rem(padding, @spacing-vertical-base);
+	vertical-align: middle;
+}
+// 注册
+.register-con {
+	text-align: center;
+	.px2rem(margin, 120, @spacing-vertical-base);
+	.px2rem(padding-bottom, @spacing-vertical-base);
+	// 橙色
+	.icon-go {
+	    color: @color-success;
+	}
+} 
+.icon-arr-right {
+    font-size: 16px !important;
+}
+
+// 通用con布局
+.g-con {
+	.px2rem(margin, @spacing-vertical-base);
+}
+// 页面底部
+.g-con-b {
+	.px2rem(margin, @spacing-vertical-base, @spacing-vertical-base, 0, @spacing-vertical-base);
+	.px2rem(padding-bottom, @spacing-vertical-base);
+}
+

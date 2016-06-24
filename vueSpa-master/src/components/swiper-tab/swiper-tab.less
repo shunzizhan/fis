@@ -1,0 +1,53 @@
+/**
+ * 滚动头条
+ */
+
+@import "../ui/variable";
+@import "../ui/mixin";
+
+.tabcomponent{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .tabhead{
+        height: 44px;
+        border-bottom: 1px solid #eee;
+        background: #41B883;
+        position: relative;
+        .tabheader{
+            text-align: center;
+            line-height: 44px;
+            width: 25%;
+            float: left;
+            color: #fff;
+            font-size: 14px;
+        }
+        .active{
+            color:red;
+        }
+        .tabheadbar{
+            position: absolute;
+            left: 0%;
+            bottom: 0px;
+            width: 25%;
+            height: 2px;
+            background: red;
+            transition: left 0.2s ;
+        }
+    }
+
+    .tabcontent{
+        height: 100%;
+        left: 0px;
+        position: relative;
+        transition: left 0.3s ;
+        .contenta{
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background: #eee;
+            float: left;
+        }
+    }
+
+}

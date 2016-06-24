@@ -1,0 +1,13 @@
+/**
+ * 过渡效果
+ * @param  {[type]} @property [description]
+ * @param  {[type]} @duration [description]
+ * @param  {[type]} @timing   [description]
+ */
+.transition(@property,@duration,@timing){
+	-webkit-transition: @property @duration @timing;
+	-moz-transition: @property @duration @timing;
+	-ms-transition: @property @duration @timing;
+	-o-transition: @property @duration @timing;
+	transition: @property @duration @timing;
+}

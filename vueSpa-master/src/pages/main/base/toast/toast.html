@@ -1,0 +1,97 @@
+<div class="showinfo">
+    <div class="maininfo">
+
+        <div class="use">
+            <h3 class="infotitle">Toast 按钮</h3>
+            
+            <div class="info">
+                <ui-button type='primary' size='biger' @click="clickAlert()"> Toast 
+                </ui-button>
+
+                <ui-toast :show.sync='toast'></ui-toast>
+                
+            </div>
+
+            <h3 class="infotitle">选项</h3>
+            <div class="info">
+                <span class="">类型:</span>
+                <ui-checkbox>alert</ui-checkbox> &nbsp;&nbsp;
+                <ui-checkbox>confirm</ui-checkbox>
+                
+                <br /><br />
+
+                <span>展示效果:</span>
+                <ui-button type='primary' size='biger'> Test </ui-button>
+            </div>
+
+            <h3 class="infotitle">说明</h3>
+            <div class="info">
+                <ul>
+                    <li>可以自定义扩展的class</li>
+                    <li>使用方法2</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="showcode">
+            <h3 class="infotitle">作者 [Author]: <span>Lilian</span></h3>
+
+            <h3 class="infotitle">完成进度 [Percent]</h3>
+                <div class="info">
+                    <span class="percent">100%</span>
+                </div>    
+
+            <h3 class="infotitle">代码引用 [showCode]</h3>
+                
+                <div class="info">
+                    <div class="showcodeinfo">
+                       <span class="htmlcode span">HTML</span><span class="jscode span active">JS</span>
+                       <div class="showcodemain" style="">
+<pre><code class="xml">
+    &ltui-dialog :show.sync='dialog'&gt&lt/ui-dialog&gt
+</code></pre>
+                       </div>
+
+                       <div class="showcodemain">
+
+<pre><code class="javascript">
+window.RUI.dialog = {
+    template: __inline('dialog.tpl'),
+    props: ['show'],
+    methods: {
+        close: function() {
+            this.show = null;
+        },
+        confirm: function() {
+            var fn = this.show && this.show.onConfirm;
+            if (typeof fn == 'function') {
+                fn();
+            }
+            this.close();
+        },
+        cancel: function() {
+            var fn = this.show && this.show.onCancel;
+            if (typeof fn == 'function') {
+                fn();
+            }
+            this.close();
+        }
+    }
+};
+</code></pre>
+
+                       </div>
+
+                    </div>
+                </div>  
+        </div> 
+
+    </div>               
+</div>
+
+
+
+
+    
+
+

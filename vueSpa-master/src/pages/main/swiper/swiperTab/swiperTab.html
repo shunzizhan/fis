@@ -1,0 +1,148 @@
+<div class="showinfo">
+    <div class="maininfo">
+
+        <div class="use">
+            <h3 class="infotitle">swiperTab</h3>
+            <div class="info">
+                <ui-swiper-tab></ui-swiper-tab>      
+            </div>
+
+            <h3 class="infotitle">选项</h3>
+
+            <div class="info">
+                <span class="">速度:</span>
+                <ui-checkbox>biger</ui-checkbox> &nbsp;&nbsp;
+                <ui-checkbox>small</ui-checkbox>
+                
+                <br /><br />
+
+                <span>展示效果:</span>
+                <ui-button type='primary' size='biger'> Test </ui-button>
+            </div>
+
+            <h3 class="infotitle">说明</h3>
+            <div class="info">
+                <ul>
+                    <li>可以自定义扩展的class</li>
+                    <li>使用方法2</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="showcode">
+            <h3 class="infotitle">作者 [Author]: <span>Zigzag</span></h3>
+
+            <h3 class="infotitle">完成进度 [Percent]</h3>
+                <div class="info">
+                    <span class="percent">100%</span>
+                </div>    
+
+            <h3 class="infotitle">代码引用 [showCode]</h3>
+                
+                <div class="info">
+                    <div class="showcodeinfo">
+                       <span class="htmlcode span">HTML</span><span class="jscode span active">JS</span>
+                       <div class="showcodemain" style="">
+<pre><code class="xml">
+    &ltui-swiper-headline&gt&lt/ui-swiper-headline&gt 
+</code></pre>
+                       </div>
+
+                       <div class="showcodemain">
+
+<pre><code class="javascript">
+window.RUI.swiperHeadline = {
+
+    template: __inline('swiper-headline.tpl'),
+
+    props: {
+        //数据
+        items: {
+            type: Array,
+            default: function() {
+                return [];
+            }
+        },
+    }, 
+
+    methods:{
+
+        autoPlay: function(){
+            var that = this;
+            //每次进来先清除定时器
+            window.clearTimeout(this.timer);
+            that.timer = null;
+
+            var alength = this.$els.headLine.children.length;
+
+            
+
+            that.timer = setTimeout(function() {
+
+                if(that.moveHeight <= 31 * (alength - 1) ){
+                    that.$els.headLine.style.webkitTransform="translate3d(0px,"+ -that.moveHeight+"px,0px)";
+                }else{
+                    that.moveHeight = 0;
+                    this.moveHeight = 0;
+                    that.$els.headLine.style.webkitTransform="translate3d(0px,"+ -that.moveHeight+"px,0px)";
+                    //that.stopPlay(); 
+                    // 
+                    that.autoPlay();
+                    
+                }
+
+            that.moveHeight += 31;
+    
+            that.autoPlay();
+
+            }, 2000);
+        },
+
+        stopPlay: function() {
+            if (this.timer) {
+                
+                window.clearTimeout(this.timer);
+                this.timer = null;
+                
+                this.autoPlay();
+            }
+        }
+
+    },
+    
+    ready:function(){
+        var that = this;
+        var headline = this.$els.headLine;
+        var children = headline.children;
+        var moveHeight = 31;  
+
+        that.moveHeight = 0;
+
+        var heights =  moveHeight * (children.length + 1);
+
+        headline.style.width = "100%";
+        headline.style.height = heights +'px';  
+        headline.style.transition="-webkit-transform 500ms";
+
+        this.autoPlay();
+        
+    }
+};
+</code></pre>
+
+                       </div>
+
+                    </div>
+                </div>  
+        </div> 
+
+
+    </div>               
+</div>
+
+
+
+
+    
+
+
