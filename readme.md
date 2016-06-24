@@ -156,6 +156,7 @@ fis.match('/images/(*.{png,gif})', {
 
 ### 在js中定位资源
 >js语言中，可以使用编译函数 __uri(path) 来定位资源，fis分析js文件或 `html中的script标签`内内容 时会替换该函数所指向文件的线上url路径。
+
 ``` javascript
 //源码
 var img = __uri('images/logo.gif');
@@ -171,6 +172,7 @@ var css = '/demo_7defa41.css';
 var js = __uri('demo.js');
 //编译后
 var js = '/demo_33c5143.js';
+
 ```
 
 > **提示：**了解即可，实际开发中不推荐使用，从易读性角度，还是直接写路径
