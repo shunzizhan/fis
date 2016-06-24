@@ -172,10 +172,14 @@ var js = __uri('demo.js');
 //编译后
 var js = '/demo_33c5143.js';
 ```
+
 > **提示：**了解即可，实际开发中不推荐使用，从易读性角度，还是直接写路径
 
+
 ### 在css中定位资源
+
 >fis编译工具会识别`css文件`或 `html的style标签内容 中 url(path) 以及 src=path 字段`，并将其替换成对应资源的编译后url路径
+
 ``` less
  // 源码
  @import url('demo.css');
@@ -190,7 +194,9 @@ var js = '/demo_33c5143.js';
  .style {
       background: url('/images/body-bg_1b8c3e0.png');
   }
+
 ```
+
 > **提示：**了解即可，实际开发中不推荐使用，直接使用less文件的导入功能即可，且在less编译成css过程中，就行自动修改图片路径，并添加md5戳
 
 ## 内容嵌入
