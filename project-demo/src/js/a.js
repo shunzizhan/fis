@@ -1,1 +1,0 @@
-var ss = "hello wrold";
