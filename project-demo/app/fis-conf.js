@@ -1,7 +1,7 @@
 
 // 保持发布使用相对路径
-fis.hook('relative'); 
-fis.match('**', { relative: true })
+// fis.hook('relative'); 
+// fis.match('**', { relative: true })
 
 //域
 // 测试环境
@@ -10,8 +10,8 @@ fis.set('domain_test', ''); //开发环境静态资源
 fis.set('domain_pre', 'http://preuc.fdc.com.cn'); 
 // 线上环境
 fis.set('domain_build', ''); 
-// 定义版本号
-fis.set('version', '1.0.0'); 
+// // 定义版本号
+// fis.set('version', '1.0.0'); 
 
 //参考：https://github.com/kangax/html-minifier
 fis.config.set('settings.optimizer.html-minifier', {
@@ -48,6 +48,7 @@ fis.set('project.ignore', [
     '.svn/**',
     'node_modules/**',
     '*.bat',
+    '*.cmd',
     '*.log',
     'fis-conf.js',
     "package.json",
@@ -60,55 +61,21 @@ fis.set('project.ignore', [
  */
  
 fis.media('test')
-    // js进行压缩，并使用hash值
-    .match("/js/*.js", {
-        useHash: true,
-        optimizer: fis.plugin('uglify-js')
-    })
     // 将less文件编译成css
-    .match('/css/*.{less,css}', {
+    .match('*.less', {
         parser: fis.plugin('less'),
         rExt: '.css'
     })
-    // 对css进行压缩，使用hash值，并合成雪碧图
-    .match('/css/*.{less,css}', {
-        useHash: true,
-        useSprite: true,
-        optimizer: fis.plugin('clean-css')
-    })
-    // css 自动补充兼容性
-    .match('/css/*.{css,less}', {
-      preprocessor: fis.plugin('cssprefixer', {
-        "browsers": ["FireFox > 1", "Chrome > 1", "ie >= 8"],
-        "cascade": true
+    // // css 自动补充兼容性
+    // .match('*.css', {
+    //   preprocessor: fis.plugin('cssprefixer', {
+    //     "browsers": ["FireFox > 1", "Chrome > 1", "ie >= 8"],
+    //     "cascade": true
+    //   })
+    // })
+    .match('*', {
+      deploy:fis.plugin('local-deliver', {
       })
-    })
-    // 给图片添加hash值
-    .match("*.{png,jpg,jpeg,gif,ico}", {
-        useHash: true
-    })
-    // 压缩图片
-    .match('images/*.png', {
-        optimizer: fis.plugin('png-compressor', {
-            type: 'pngquant' 
-        })
-    })
-    // 将合成的雪碧图直接放在images/sprite文件中
-    .match('/css/(*.{png,gif})', {
-      //发布到/images/sprite/xxx目录下
-      release: '/images/sprite/$1$2'
-    })
-    .match('**', {
-      domain: "${domain_test}",
-      deploy: [
-        fis.plugin('skip-packed', {
-          // 配置项
-          skipPackedToCssSprite:true
-        }),
-        fis.plugin('local-deliver', {
-          // to:'/test/$0'
-        })
-      ] 
     })
 
 
