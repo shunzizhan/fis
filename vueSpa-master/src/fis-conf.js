@@ -21,7 +21,7 @@ fis.config.set('settings.spriter.csssprites', {
     styleReg: /(<style(?:(?=\s)[\s\S]*?["'\s\w\/\-]>|>))([\s\S]*?)(<\/style\s*>|$)/ig,
     margin: 5 //图之间的边距
 });
-
+ 
 //参考：https://github.com/fex-team/fis-optimizer-uglify-js
 fis.config.set('settings.optimizer.uglify-js', {
     mangle: {
