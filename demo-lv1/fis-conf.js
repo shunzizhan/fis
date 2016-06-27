@@ -3,9 +3,9 @@ fis.match('*', {
 });
 
 fis.match('::packager', {
-  postpackager: fis.plugin('loader', {
-    // allInOne: true
-  })
+  // postpackager: fis.plugin('loader', {
+  //   // allInOne: true
+  // })
 });
 
 fis.match('*.less', {
