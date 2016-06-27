@@ -55,6 +55,7 @@ fis.match('*.png', {
 // f:/github/fis/my_release
 fis.match('*', {
   deploy: fis.plugin('local-deliver', {
-    to: 'F:/github/fis/my_release'
+    // to: 'F:/github/fis/my_release'
+    // to: './output'
   })
 })
