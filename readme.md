@@ -33,6 +33,8 @@ fis3 中`内嵌`了很多常用的插件
 在实际开发中，我们还会使用一些fis3插件，此时，我们需要使用`npm install -g XXX`，例如：
 -  将less文件编译成css `npm install -g fis-parser-less`
 - 在fis-config中使用相对路径 `npm install -g fis3-hook-relative` 
+- 自动补充css兼容性 `npm install -g fis-preprocessor-cssprefixer`
+- 自动忽略被合成的零碎文件 `npm install -g fis3-deploy-skip-packed`
 
 ### 基本命令
 - release 常用 `-d` `-w` `-L` `-c`
@@ -156,7 +158,6 @@ fis.match('/images/(*.{png,gif})', {
 
 ### 在js中定位资源
 >js语言中，可以使用编译函数 __uri(path) 来定位资源，fis分析js文件或 `html中的script标签`内内容 时会替换该函数所指向文件的线上url路径。
-
 ``` javascript
 //源码
 var img = __uri('images/logo.gif');
@@ -172,16 +173,11 @@ var css = '/demo_7defa41.css';
 var js = __uri('demo.js');
 //编译后
 var js = '/demo_33c5143.js';
-
 ```
-
 > **提示：**了解即可，实际开发中不推荐使用，从易读性角度，还是直接写路径
 
-
 ### 在css中定位资源
-
 >fis编译工具会识别`css文件`或 `html的style标签内容 中 url(path) 以及 src=path 字段`，并将其替换成对应资源的编译后url路径
-
 ``` less
  // 源码
  @import url('demo.css');
@@ -196,19 +192,14 @@ var js = '/demo_33c5143.js';
  .style {
       background: url('/images/body-bg_1b8c3e0.png');
   }
-
 ```
-
 > **提示：**了解即可，实际开发中不推荐使用，直接使用less文件的导入功能即可，且在less编译成css过程中，就行自动修改图片路径，并添加md5戳
 
 ## 内容嵌入
-
 > 嵌入资源即内容嵌入，可以为工程师提供诸如图片base64嵌入到css、js里，前端模板编译到js文件中，将js、css、html拆分成几个文件最后合并到一起的能力。有了这项能力，可以有效的减少http请求数，提升工程的可维护性。 fis不建议用户使用内容嵌入能力作为组件化拆分的手段，因为声明依赖能力会更适合组件化开发。
 
 ### 在html中嵌入资源
-
 在html中可以嵌入其他文件内容或者base64编码值，可以在资源定位的基础上，给资源加` ?__inline` 参数来标记资源嵌入需求。
-
 - html中嵌入图片base64
   ```vbscript-html
   <!--源码-->
@@ -281,6 +272,7 @@ console.log('demo.js content');
   npm install -g fis3
   npm install -g fis-parser-less
   npm install -g fis3-hook-relative
+  npm install -g fis-preprocessor-cssprefixer
 ```
 **说明：**前提是已安装`node`、`npm` 
 
