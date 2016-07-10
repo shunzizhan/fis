@@ -79,7 +79,7 @@ fis.match("*", {
     })
     // 对css进行压缩，使用hash值，并合成雪碧图
     .match('/({css,less})/*.{less,css}', {
-        useHash: true,
+        // useHash: true,
         useSprite: true,
         optimizer: fis.plugin('clean-css')
     })
