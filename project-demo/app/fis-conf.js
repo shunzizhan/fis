@@ -1,3 +1,4 @@
+
 // 保持发布使用相对路径
 fis.hook('relative'); 
 

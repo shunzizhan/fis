@@ -1,0 +1,1 @@
+$(".search-one").click(function(){alert($(this).text())});

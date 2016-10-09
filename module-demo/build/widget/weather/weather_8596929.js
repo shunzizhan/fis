@@ -1,0 +1,1 @@
+$(".weather-one").click(function(){alert($(this).text())});
