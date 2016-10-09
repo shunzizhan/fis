@@ -10,6 +10,7 @@ fis.set('domain_build', ''); //发布环境静态资源
 // 定义版本号
 fis.set('version', '1.0.0'); 
 
+
 //参考：https://github.com/kangax/html-minifier
 fis.config.set('settings.optimizer.html-minifier', {
     removeComments: true, //删除注释
